@@ -18,12 +18,13 @@ app.use(routes);
 
 
 // database stuff...
-
-mongoose.connect('mongodb://localhost/workout', {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/workout',
+  {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  });
 
 // const databaseUrl = "notetaker";
 // const collections = ["notes"];
